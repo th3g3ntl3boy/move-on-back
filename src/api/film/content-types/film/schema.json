@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "films",
+  "info": {
+    "singularName": "film",
+    "pluralName": "films",
+    "displayName": "FILM"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul": {
+      "type": "string",
+      "required": true
+    },
+    "deskripsi": {
+      "type": "richtext",
+      "required": true
+    },
+    "tanggalrilis": {
+      "type": "date",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Romance",
+        "Action",
+        "School",
+        "Anime",
+        "Comedy",
+        "Sci-Fi",
+        "War"
+      ],
+      "required": true
+    },
+    "thumb": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "region": {
+      "type": "enumeration",
+      "enum": [
+        "NOTID",
+        "ID"
+      ],
+      "required": true
+    },
+    "linkyt": {
+      "type": "string",
+      "required": true
+    },
+    "komentars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::komentar.komentar",
+      "mappedBy": "film"
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating.rating",
+      "mappedBy": "film"
+    },
+    "history": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::history.history",
+      "inversedBy": "films"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "komentars",
+  "info": {
+    "singularName": "komentar",
+    "pluralName": "komentars",
+    "displayName": "KOMENTAR"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "komen": {
+      "type": "text"
+    },
+    "like": {
+      "type": "integer"
+    },
+    "film": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::film.film",
+      "inversedBy": "komentars"
+    }
+  }
+}

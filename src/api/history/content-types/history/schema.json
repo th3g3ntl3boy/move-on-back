@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "histories",
+  "info": {
+    "singularName": "history",
+    "pluralName": "histories",
+    "displayName": "HISTORY"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "films": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::film.film",
+      "mappedBy": "history"
+    }
+  }
+}
